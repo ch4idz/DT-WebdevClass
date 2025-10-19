@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Destructuring (Code Snippet)</title>
+  </head>
+  <body>
+    <script>
+      const user = { name: "Chai", age: 18 };
+      const { name, age } = user;
+      const frontend = ["React", "Vue"];
+      const backend = ["Node", "Express"];
+      const fullStack = [...frontend, ...backend];
+      const average = (...nums) =>
+        nums.reduce((sum, num) => sum + num, 0) / nums.length;
+
+      console.log(`User: ${name}, Age: ${age}`);
+      console.log(`Full stack skills: ${fullStack}`);
+      console.log(`Average: ${average(12, 18, 24, 36)}`);
+    </script>
+  </body>
+</html>
