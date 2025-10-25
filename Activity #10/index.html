@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Activity #10 - Character Counter</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        text-align: center;
+        margin: 50px;
+        background-color: #f7f7f7;
+      }
+      h2 {
+        color: #333;
+      }
+      textarea {
+        width: 80%;
+        height: 150px;
+        padding: 10px;
+        font-size: 16px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        resize: both;
+      }
+      p {
+        font-size: 18px;
+        margin-top: 15px;
+        font-weight: bold;
+      }
+      span {
+        color: #007bff;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>📝 Activity #10: Character Count Application</h2>
+
+    <textarea id="textInput" placeholder="Start typing here..."></textarea>
+    <p>Character Count: <span id="charCount">0</span></p>
+
+    <script>
+      const textInput = document.getElementById("textInput");
+      const charCount = document.getElementById("charCount");
+
+      textInput.addEventListener("input", function () {
+        const count = textInput.value.length;
+        charCount.textContent = count;
+      });
+    </script>
+  </body>
+</html>
