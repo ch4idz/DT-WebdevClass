@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Color Picker - Separate Controls</title>
+    <style>
+      body {
+        text-align: center;
+        transition: background-color 0.3s ease;
+        font-family: Arial, sans-serif;
+      }
+      #imageBox {
+        width: 200px;
+        height: 150px;
+        background-color: #cccccc;
+        color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 10px;
+        margin: 20px auto;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+      }
+      #infoBox {
+        margin-top: 10px;
+        font-size: 1.1em;
+        font-weight: bold;
+      }
+      .picker-section {
+        margin: 15px 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h2>🎨 Dual Color Picker Demo</h2>
+
+    <div class="picker-section">
+      <label>Background Color: </label>
+      <input type="color" id="bgColorPicker" />
+    </div>
+
+    <div class="picker-section">
+      <label>Paragraph Text Color: </label>
+      <input type="color" id="textColorPicker" />
+    </div>
+
+    <p id="text">This text color will change based on your selection!</p>
+
+    <div id="infoBox">No color selected yet.</div>
+
+    <div id="imageBox">Default Image Box</div>
+
+    <script>
+      const bgColorPicker = document.getElementById("bgColorPicker");
+      const textColorPicker = document.getElementById("textColorPicker");
+      const text = document.getElementById("text");
+      const infoBox = document.getElementById("infoBox");
+      const imageBox = document.getElementById("imageBox");
+
+      // Background color change
+      bgColorPicker.addEventListener("input", function () {
+        const bgColor = bgColorPicker.value;
+        document.body.style.backgroundColor = bgColor;
+        infoBox.textContent = `Background color: ${bgColor}`;
+        imageBox.style.backgroundColor = bgColor;
+        imageBox.textContent = `BG: ${bgColor}`;
+      });
+
+      // Text color change
+      textColorPicker.addEventListener("input", function () {
+        const textColor = textColorPicker.value;
+        text.style.color = textColor;
+        infoBox.textContent = `Text color: ${textColor}`;
+        imageBox.style.backgroundColor = textColor;
+        imageBox.textContent = `TEXT: ${textColor}`;
+      });
+    </script>
+  </body>
+</html>
