@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator using Counter Function with Closures</title>
+    <style>
+      body {
+        background-color: #222;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: Arial, sans-serif;
+      }
+
+      .calculator {
+        background-color: #333;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        width: 260px;
+      }
+
+      .brand {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #f2f2f2;
+        letter-spacing: 2px;
+      }
+
+      .display {
+        background-color: #555;
+        color: #fff;
+        border: none;
+        width: 100%;
+        height: 40px;
+        font-size: 1.2em;
+        text-align: right;
+        border-radius: 5px;
+        margin-bottom: 10px;
+        padding-right: 10px;
+      }
+
+      .buttons {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 8px;
+      }
+
+      button {
+        background-color: #d3d3d3;
+        border: none;
+        border-radius: 5px;
+        padding: 10px;
+        font-size: 1.1em;
+        cursor: pointer;
+        color: black;
+        transition: 0.2s;
+      }
+
+      button:hover {
+        background-color: #bbb;
+      }
+
+      .reset {
+        background-color: #f44336;
+        color: white;
+      }
+
+      .reset:hover {
+        background-color: #d32f2f;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="calculator">
+      <div class="brand">Chai</div>
+      <input type="text" id="display" class="display" disabled />
+
+      <div class="buttons">
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+        <button>/</button>
+
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>*</button>
+
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>-</button>
+
+        <button>0</button>
+        <button>.</button>
+        <button>=</button>
+        <button>+</button>
+
+        <button class="reset" style="grid-column: span 4">RESET</button>
+      </div>
+    </div>
+
+    <script>
+      // Counter with Closure
+      function createCalculator() {
+        let expression = "";
+
+        return {
+          addInput(value) {
+            expression += value;
+            return expression;
+          },
+          reset() {
+            expression = "";
+            return expression;
+          },
+          evaluate() {
+            try {
+              expression = eval(expression).toString();
+              return expression;
+            } catch {
+              return "Error";
+            }
+          },
+          getExpression() {
+            return expression;
+          },
+        };
+      }
+
+      const calc = createCalculator();
+      const display = document.getElementById("display");
+      const buttons = document.querySelectorAll("button");
+
+      buttons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const value = button.textContent;
+
+          if (value === "RESET") {
+            display.value = calc.reset();
+          } else if (value === "=") {
+            display.value = calc.evaluate();
+          } else {
+            display.value = calc.addInput(value);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

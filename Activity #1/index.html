@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background: #f4f4f9;
+        color: #333;
+      }
+
+      header {
+        background: #4caf50;
+        color: white;
+        padding: 20px 0;
+        text-align: center;
+      }
+
+      header h1 {
+        margin: 0;
+        font-size: 2.5rem;
+      }
+
+      header p {
+        margin: 5px 0 0;
+        font-size: 1.2rem;
+      }
+
+      nav {
+        background: #333;
+        padding: 10px;
+        text-align: center;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 15px;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        color: #4caf50;
+      }
+
+      .container {
+        width: 90%;
+        max-width: 1000px;
+        margin: 20px auto;
+      }
+
+      section {
+        margin-bottom: 40px;
+      }
+
+      h2 {
+        color: #4caf50;
+        border-bottom: 2px solid #4caf50;
+        display: inline-block;
+        padding-bottom: 5px;
+      }
+
+      .about {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .about img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        border: 4px solid #4caf50;
+        box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.2);
+      }
+
+      .about-text {
+        flex: 1;
+      }
+
+      .projects,
+      .contact {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      .projects .project {
+        margin-bottom: 15px;
+      }
+
+      footer {
+        background: #333;
+        color: white;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>DECENA, CHAIDER</h1>
+      <p>Aspiring Web Developer</p>
+    </header>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <div class="container">
+      <section id="about" class="about">
+        <img src="chai2.jpg" alt="chai" />
+        <div class="about-text">
+          <h2>About Me</h2>
+          <p>
+            Hello! I'm Chai, who loves coding and building web applications.
+            Currently, I am practicing web development to strengthen my skills
+            in HTML, CSS, JavaScript, and backend technologies.
+          </p>
+        </div>
+      </section>
+
+      <section id="projects" class="projects">
+        <h2>Project Roadmap 🚀</h2>
+
+        <div class="project">
+          <h3>🔰 Beginner Level</h3>
+          <ul>
+            <li>Personal Portfolio Website</li>
+            <li>Simple Calculator</li>
+            <li>To-Do List App</li>
+            <li>Digital Clock / Stopwatch / Timer</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <h3>⚡ Intermediate Level</h3>
+          <ul>
+            <li>Weather App (using API)</li>
+            <li>Quiz App with Score Tracking</li>
+            <li>Notes App (CRUD with localStorage)</li>
+            <li>Movie Search App (OMDB API)</li>
+          </ul>
+        </div>
+
+        <div class="project">
+          <h3>🔥 Advanced Level</h3>
+          <ul>
+            <li>Inventory Management System</li>
+            <li>Student Grade Management App</li>
+            <li>Expense Tracker with Charts</li>
+            <li>Mini E-commerce Frontend</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="contact" class="contact">
+        <h2>Contact</h2>
+        <p>Email: <a href="cdcna26@gmail.com">cdcna26@gmail.com</a></p>
+        <p>
+          GitHub:
+          <a href="https://github.com/ch4idz" target="_blank"
+            >https://github.com/ch4idz</a
+          >
+        </p>
+      </section>
+    </div>
+
+    <footer>
+      <p>© 2025 chai | All Rights Reserved</p>
+    </footer>
+  </body>
+</html>
